@@ -189,8 +189,8 @@ function renderKnownTransaction (self, data) {
   var obj = {from, to}
   var tx = yo`
     <span id="tx${data.tx.hash}">
-      <div class="${css.log}" onclick=${e => txDetails(e, tx, data, obj)}>
-        <i class="${css.caret} fa fa-caret-right"></i>
+      <i class="${css.caret} fa fa-caret-right" onclick=${e => txDetails(e, tx, data, obj)}></i>
+      <div class="${css.log}">
         ${context(self, {from, to, data})}
         <div class=${css.buttons}>
           <div class=${css.debug} onclick=${debug}>[debug]</div>
@@ -215,8 +215,8 @@ function renderCall (self, data) {
   var obj = {from, to}
   var tx = yo`
     <span id="tx${data.tx.hash}">
-      <div class="${css.log}" onclick=${e => txDetails(e, tx, data, obj)}>
-        <i class="${css.caret} fa fa-caret-right"></i>
+      <i class="${css.caret} fa fa-caret-right" onclick=${e => txDetails(e, tx, data, obj)} ></i>
+      <div class="${css.log}">
         <span class=${css.txLog}>
           <span class=${css.tx}>[call]</span>
           <div class=${css.txItem}><span class=${css.txItemTitle}>from:</span> ${from}</div>
@@ -243,8 +243,8 @@ function renderUnknownTransaction (self, data) {
   var obj = {from, to}
   var tx = yo`
     <span id="tx${data.tx.hash}">
-      <i class="${css.caret} fa fa-caret-right"></i>
-      <div class="${css.log}" onclick=${e => txDetails(e, tx, data, obj)}>
+      <i class="${css.caret} fa fa-caret-right" onclick=${e => txDetails(e, tx, data, obj)}></i>
+      <div class="${css.log}">
         ${context(self, {from, to, data})}
         <div class=${css.buttons}>
           <div class=${css.debug} onclick=${debug}>[debug]</div>
